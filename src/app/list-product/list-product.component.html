@@ -1,0 +1,23 @@
+<h1>{{title}}</h1>
+
+<div  class="row">
+  <!-- card1 -->
+  <div  *ngFor="let product of listProduct;"  class="col-sm-6">
+    <div   class="card text-center">
+      <div class="card-body">
+         <img src="{{product.picture}}" class="card-img-top" alt="...">
+         <!-- card info  -->
+        <!-- <h6 class="card-id"> {{product.id}} </h6> -->
+        <h2 class="card-title"> {{product.title}} </h2>
+        <p class="card-text ">{{product.description}}</p>
+        <h5 class="card-price"> {{product.price}} DT </h5>
+        <h3 class="card-quantity"> {{product.quantity}} </h3>
+        <!-- button for cards -->
+        <a href="#" class="btn btn-sm btn-info">{{product.like}} 💕 </a>
+        <a href="#" class="btn btn-sm btn-warning" [hidden]="product.quantity===0">Buy💲</a>
+        <p  *ngIf="product.quantity === 0"> Out of stock </p>
+      </div>
+    </div>
+  </div>
+  <!-- card 1 ends here -->
+</div>
